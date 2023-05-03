@@ -35,9 +35,11 @@ public class Player extends Shell {
     private int resumeTime; //used for pausing and resuming
     private boolean paused = false; //used to stop timer when song is paused
 	private boolean repeat = false;//used tell if song has been repeated
+<<<<<<< Updated upstream
     private int i = 0; //used to track location in Arraylist
     private java.util.List<Song> songList = new ArrayList<Song>();// this is the arraylist for the song list-brian
     private Song song;
+    private int i = 0; //used to track location in ArrayList
 
     public Player(String artist, String album, String name, String url, int yearReleased, String genre, int duration) {
         this.song = new Song(artist, album, name, url, yearReleased, genre, duration);
@@ -151,6 +153,7 @@ public class Player extends Shell {
 		        		//ProgressBar used to track location within song
 		        		ProgressBar progressBar = new ProgressBar(composite, SWT.NONE);
 		        		progressBar.setLayoutData(new GridData(SWT.CENTER, SWT.CENTER, false, false, 5, 1));
+		        		progressBar.setBounds(50, 240, 450, 15);
 		        		progressBar.setMinimum(0);
 		        		//button used to restart the current song
 		        		Button btnRestart = new Button(composite, SWT.NONE);
@@ -172,6 +175,7 @@ public class Player extends Shell {
 		        		//button used to start playing the playlist
 		        		Button btnPlay = new Button(composite, SWT.NONE);
 		        		btnPlay.setText("Play");
+		        		btnPlay.setBounds(230, 340, 105, 35);
 		        		btnPlay.addListener(SWT.Selection, event -> {
 		        			Browser browser = new Browser(this, SWT.NONE);
 		        			browser.setBounds(50, 50, 1, 1);
@@ -539,7 +543,7 @@ public class Player extends Shell {
 								control.dispose();
 							}//end if
 						}//end for
-						if (i == songList.size() - 1) { //if statment to check if current song is the last in the list
+						if (i == songList.size() - 1) { //if statement to check if current song is the last in the list
 							return;
 						}//end if
 						//creating the new browser
